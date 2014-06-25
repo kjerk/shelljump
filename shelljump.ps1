@@ -1,14 +1,5 @@
 <#
-	Filesystem jumping | kjerk (kjerkdev@gmail.com)
-
-	Inspired by "Quickly navigate your filesystem from the command-line"
-	tinyurl.com/nx6wzvq
-	
-	Script allowing for bookmarking of folders under aliases and the
-	capability to jump to them, persisting between shell sessions.
-	
-	Jump and unmark commands have tab completion (cycling only), with
-	fallback to normal tab completion on failure to match commands.
+	https://github.com/kjerk/shelljump
 	
 	Commands (aliased):
 		jump (name)     | Jump to a previously bookmarked folder.
@@ -16,21 +7,6 @@
 		mark (name)     | Bookmarks current directory as a given name.
 		unmark (name)   | Removes named bookmark.
 		
-	Underlying functions:
-		New-Bookmark
-		Remove-Bookmark
-		Invoke-Bookmark
-		Write-Bookmarks
-		Read-Bookmarks (Triggered on script load)
-		Get-Bookmarks
-		TabExpansion (Renaming default to TabExpansionBackupJump which
-					  gets called as a fallback.)
-		
-	Bookmarks are serialized to a Jumps.json file in the powershell
-	profile's folder. (Usually My Documents\WindowsPowerShell\)
-	Saves are atomic and triggered on add and remove
-	, the last version being saved as Jumps.json.prev.
-	
 	Example:
 		C:\> cd '.\Program Files\Sublime Text 2'
 		C:\Program Files\Sublime Text 2> mark st2
